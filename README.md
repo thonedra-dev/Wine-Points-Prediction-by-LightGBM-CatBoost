@@ -48,19 +48,19 @@ A robust preprocessing pipeline was engineered to ensure high-quality model inpu
 ### 🧹 Missing Value Handling
 Features with massive missing percentages and low overall importance (e.g., `region_2` at 61.1%, `taster_name` at 20.2%) were dropped permanently. For our most critical feature, `price` (missing ~6.9%), rows were dropped to prevent injecting artificial relationships into the target.
 
-> **Visual 1: Missing Values Overview** > *Note: Replace the path below with your actual image path* > <img src="assets/missing_values_hexagram.png" alt="Missing Values Hexagram" width="800"/>
+> **Visual 1: Missing Values Overview** > *Note: Replace the path below with your actual image path* > <img src="images/missing_values_hexagram.png" alt="Missing Values Hexagram" width="800"/>
 
 ### 🕵️ Outlier Detection & Skewness
 We utilized box plots to identify extreme outliers in numerical columns. `price` exhibited a severe positive skew, heavily impacted by ultra-premium wines.
 
-> **Visual 2: Extreme Value Handling** > *Note: Replace the path below with your actual image path* > <img src="assets/box_plots_outliers.png" alt="Box Plot for extreme value handling of price and points" width="800"/>
+> **Visual 2: Extreme Value Handling** > *Note: Replace the path below with your actual image path* > <img src="images/box_plots_outliers.png" alt="Box Plot for extreme value handling of price and points" width="800"/>
 
 ### 📈 Normalization & Distribution
 To correct the heavy right-skew of the `price` feature, a `log1p()` transformation was applied. This mathematically stabilized the variance and significantly improved its linear correlation with the `points` target.
 
-> **Visual 3: Data Distribution (Price & Points)** > *Note: Replace the path below with your actual image path* > <img src="assets/data_distribution.png" alt="Data Distribution for both price and points" width="800"/>
+> **Visual 3: Data Distribution (Price & Points)** > *Note: Replace the path below with your actual image path* > <img src="images/data_distribution.png" alt="Data Distribution for both price and points" width="800"/>
 
-> **Visual 4: Price Log-Transformation Impact** > *Note: Replace the path below with your actual image path* > <img src="assets/price_log1p_comparison.png" alt="Price distribution before and after log1p" width="800"/>
+> **Visual 4: Price Log-Transformation Impact** > *Note: Replace the path below with your actual image path* > <img src="images/price_log1p_comparison.png" alt="Price distribution before and after log1p" width="800"/>
 
 ### 🧩 Feature Engineering & Encoding Strategy
 - **Low Cardinality (`country`, `taster_twitter_handle`):** One-Hot Encoding.
@@ -68,7 +68,7 @@ To correct the heavy right-skew of the `price` feature, a `log1p()` transformati
 - **Ultra-High Cardinality (`winery`, `designation`):** Frequency Encoding.
 - **Free Text (`description`, `title`):** TF-IDF Vectorization.
 
-> **Visual 5: Feature Correlation Heatmap** > *Note: Replace the path below with your actual image path* > <img src="assets/feature_correlation_heatmap.png" alt="Feature Correlation Heatmap" width="600"/>
+> **Visual 5: Feature Correlation Heatmap** > *Note: Replace the path below with your actual image path* > <img src="images/feature_correlation_heatmap.png" alt="Feature Correlation Heatmap" width="600"/>
 
 ---
 
